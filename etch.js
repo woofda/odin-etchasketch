@@ -1,4 +1,12 @@
-let area = document.querySelector('.container');
+// Form display functions
+document.querySelector('.new-button').addEventListener('click', () => {
+    document.querySelector('.new-form').style.display = 'block';
+});
+
+document.querySelector('.cancel').addEventListener('click', () => {
+    document.querySelector('.new-form').style.display = 'none';
+});
+
 
 // Coloring functions
 let shades = [''];
@@ -24,13 +32,16 @@ function gradedColoring(square) {
     }
 }
 
+
 // Grid creation functions
+let area = document.querySelector('.container');
+
 function createSquare() {
     const newSquare = document.createElement('div');
     newSquare.style.border = "1px solid black";
     newSquare.style.flex = "1";
     newSquare.addEventListener('mouseover', () => {
-        gradedColoring(newSquare);
+        standardColoring(newSquare);
     });
 
     return newSquare;
@@ -60,4 +71,5 @@ function clearGrid() {
     }
 }
 
+// Default grid initilization
 createGrid(16);
