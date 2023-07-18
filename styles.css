@@ -43,7 +43,7 @@ body {
 }
 
 .new-form h3 {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .new-form input[type=text] {
@@ -68,13 +68,12 @@ body {
     border: none;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 10px;
     opacity: 0.8;
 }
 
 .create {
     background-color: #04AA6D;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .new-form .button:hover {
