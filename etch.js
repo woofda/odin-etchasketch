@@ -21,9 +21,16 @@ function createRow(length) {
     return rowContainer;
 }
 
+// Fills container with filled row elements
 function createGrid(sideLength) {
     for(let i = 0; i < sideLength; i++) {
         area.appendChild(createRow(sideLength));
+    }
+}
+
+function clearGrid() {
+    while(area.hasChildNodes()){
+        area.removeChild(area.firstChild);
     }
 }
 
