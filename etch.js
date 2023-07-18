@@ -3,8 +3,12 @@ let area = document.querySelector('.container');
 // Creates single square element
 function createSquare() {
     const newSquare = document.createElement('div');
-    newSquare.style.border = "2px solid #5f5f5f";
+    newSquare.style.border = "1px solid black";
     newSquare.style.flex = "1";
+    newSquare.addEventListener('mouseover', () => {
+        newSquare.style.backgroundColor = "#5f5f5f";
+    })
+
     return newSquare;
 }
 
