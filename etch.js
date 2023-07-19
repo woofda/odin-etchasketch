@@ -7,6 +7,10 @@ document.querySelector('.cancel').addEventListener('click', () => {
     document.querySelector('.new-form').style.display = 'none';
 });
 
+document.querySelector('.create').addEventListener('click', () => {
+
+});
+
 
 // Coloring functions
 let shades = [''];
@@ -38,7 +42,9 @@ let area = document.querySelector('.container');
 
 function createSquare() {
     const newSquare = document.createElement('div');
-    newSquare.style.border = "1px solid black";
+    if(document.querySelector('input[type=checkbox]:checked')) {
+        newSquare.style.border = "1px solid black";
+    }
     newSquare.style.flex = "1";
     newSquare.addEventListener('mouseover', () => {
         standardColoring(newSquare);
@@ -59,7 +65,7 @@ function createRow(length) {
     return rowContainer;
 }
 
-function createGrid(sideLength) {
+function createGrid(sideLength = 16) {
     for(let i = 0; i < sideLength; i++) {
         area.appendChild(createRow(sideLength));
     }
@@ -71,5 +77,6 @@ function clearGrid() {
     }
 }
 
+
 // Default grid initilization
-createGrid(16);
+createGrid();
