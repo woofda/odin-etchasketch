@@ -8,7 +8,20 @@ document.querySelector('.cancel').addEventListener('click', () => {
 });
 
 document.querySelector('.create').addEventListener('click', () => {
+    clearGrid();
 
+    let size = parseInt(document.querySelector('input[type=text]').value);
+    if(isNaN(size)) {
+        createGrid();
+    } else if(size < 1) {
+        createGrid(1);
+    } else if(size > 100) {
+        createGrid(100);
+    } else {
+        createGrid(size);
+    }
+
+    document.querySelector('.new-form').style.display = 'none';
 });
 
 
