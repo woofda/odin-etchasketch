@@ -42,13 +42,26 @@ let area = document.querySelector('.container');
 
 function createSquare() {
     const newSquare = document.createElement('div');
+
     if(document.querySelector('input[type=checkbox]:checked')) {
         newSquare.style.border = "1px solid black";
     }
+
     newSquare.style.flex = "1";
-    newSquare.addEventListener('mouseover', () => {
-        standardColoring(newSquare);
-    });
+
+    if(document.querySelector('input[name=coloring]:checked').value === 'graded') {
+        newSquare.addEventListener('mouseover', () => {
+            gradedColoring(newSquare);
+        });
+    } else if(document.querySelector('input[name=coloring]:checked').value === 'random') {
+        newSquare.addEventListener('mouseover', () => {
+            randomColoring(newSquare);
+        });
+    } else {
+        newSquare.addEventListener('mouseover', () => {
+            standardColoring(newSquare);
+        });
+    }
 
     return newSquare;
 }
